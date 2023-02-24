@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>Painter Form</title>
+ </head>
+<body>
+
+<h2>Painter entry by TeVaughn</h2>
+
+<form>
+    <label for="form1_name">The hidden painter name</label>
+    <input type ="password" id="form1_name" name="form1_name" value="Monet"> <br>
+
+    <label for="form1_guess">Guess the painter </label>
+    <input type ="text" id="form1_guess" name="form1_guess" autofocus> <br>
+
+    <input type="button" onclick="checkPainter()" value="Check the guess">
+</form>
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+ good=0;
+ oops=0;
+function checkPainter(){
+    hidden = document.getElementById("form1_name").value;
+    guess = document.getElementById("form1_guess").value;
+    if (hidden == guess){
+        alert("You got it right");
+        good += 1;
+    }
+    else{
+        alert("Sorry");
+        oops += 1;
+    }
+}
+function resolveForm (){
+    console.log("Getting form values")
+    age = document.getElementById("form1_age").value
+    nick = document.getElementById("form1_nick").value
+    confirmed = confirm("Are these the values? "+age+" and "+nick)
+    
+    out = document.getElementById("result")
+    if(confirmed){
+        out.innerHTML = "Values were confirmed"
+    } else {
+        out.innerHTML = "Values were not confirmed"
+    }
+}
+</script>
+
+</body>
+</html> 
